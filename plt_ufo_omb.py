@@ -22,7 +22,6 @@ def plt_ufo_t(filename,OBSTYPE,VarName):
    gsi_observer_noqc  =f.variables[gsihofX][:]
    ufo                =f.variables[ufohofX][:]
    geopotential_height=f.variables['geopotential_height@MetaData'][:]
-   gsi_observer_withqc=f.variables['radial_velocity@GsiHofXBc'][:]
    f.close()
 
    plt.rcParams.update({'font.size': 18})
@@ -31,12 +30,7 @@ def plt_ufo_t(filename,OBSTYPE,VarName):
    fig = plt.figure(figsize=(8.0,7.5))
    ax=fig.add_subplot(111)
 
-
-   plt.scatter(gsi_observer_withqc,ufo, color='blue',label="rw", marker='o', s=3)
-#  plt.scatter(gsi_observer_noqc,ufo, color='r',label="tsen", marker='o', s=3)
-
-   #box = ax.get_position()
-   #ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+   plt.scatter(gsi_observer_withqc,ufo, color='blue',label=thisobstype, marker='o', s=3)
 
 # Put a legend to the right of the current axis
 #  ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
@@ -93,29 +87,11 @@ def plt_ufo_t(filename,OBSTYPE,VarName):
 if __name__ == '__main__':
 
    print("start ploting")
-
-   #call subroutine plt_radar_ref
    print("ploting gsi hofx v.s. ufo hofx")
    fileame=sys.argv[1]
    OBSTYPE=sys.argv[2]
    VarName=sys.argv[3]
    subtask=sys.argv[4]
    plt_ufo_t(fileame,OBSTYPE,VarName)
+   print("ploting done")
 
-
-
-#  print(statistics.stdev(diff))
-#plt.xticks(np.arange(0,25,3))
-#ymin1=imos[0:8].min()
-#ymin2=gfs.min()
-#ymin=min(ymin1,ymin2)
-#ymin=ymin-1.0
-#print ymin
-#ymax1=imos[0:8].max()
-#ymax2=gfs.max()
-#ymax=max(ymax1,ymax2)
-#ymax=ymax+1.0
-#plt.ylim([ymin,ymax])
-#plt.xlim([-25,25])
-#  plt.xticks(fontsize=15)
-#  plt.yticks(fontsize=15)
