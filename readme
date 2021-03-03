@@ -1,4 +1,5 @@
 1. The mini-package is to compare GSI-hofx and UFo-hfox.
+
 2. How to use:
 1) plt.sh
 exp='exp1'                                         #experiment name
@@ -20,6 +21,9 @@ filename="ufo_${OBSTYPE}_2020101300_0000.nc4"      #UFO output file name in your
 3) run plt.sh 
   plt.sh will plot data in ufo_rw_2020101300_0000.nc4
   Three figures should be generated.
+
+3. EMC is developing the complex UFO acceptance tools. Thoes functions will be included in the tool set.
+   You can switch to UFO acceptance tools later.
 
 
 
