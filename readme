@@ -8,3 +8,18 @@ OBSTYPE='rw'                                       #observation type correspondi
 VarName='radial_velocity'                          #analysis variable
 taskdir=./                                         #UFO output directory
 filename="ufo_${OBSTYPE}_2020101300_0000.nc4"      #UFO output file name in your YAML file
+
+2)modify plt_ufo_omb.py
+  thisvarname=VarName
+  check if the variables are available in your UFO output file and modify this script as needed.
+   gsihofXBc=thisvarname+'@GsiHofXBc'
+   gsihofX  =thisvarname+'@GsiHofX'
+   ufohofX  =thisvarname+'@hofx'
+   geopotential_height=f.variables['geopotential_height@MetaData'][:]
+
+3) run plt.sh 
+  plt.sh will plot data in ufo_rw_2020101300_0000.nc4
+  Three figures should be generated.
+
+
+
