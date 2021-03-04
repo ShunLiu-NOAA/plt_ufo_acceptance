@@ -22,7 +22,7 @@ filename="ufo_${OBSTYPE}_2020101300_0000.nc4"      #UFO output file name in your
   plt.sh will plot data in ufo_rw_2020101300_0000.nc4
   Three figures should be generated.
 
-3. EMC is developing the complex UFO acceptance tools. Thoes functions will be included in the tool set.
+3. EMC is developing the complex UFO acceptance tools. The functions will be included in the tool set.
    You can switch to UFO acceptance tools later.
 
 
